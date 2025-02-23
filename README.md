@@ -1,12 +1,4 @@
 ## Table of Contents
-- [Key Features](#key-features)
-- [Methodology](#methodology)
-- [Equations](#key-equations)
-- [Assumptions](#key-assumptions)
-- [Load Profile Creation](#load-profile-methodology)
-- [Directory Structure](#directory-structure)
-- [Dependencies](#dependencies)
-- [Usage](#usage)
 
 
 
@@ -29,45 +21,12 @@ P<sub>pv</sub> × CF<sub>pv</sub>(t) + P<sub>dis</sub>(t) = L(t) + P<sub>ch</sub
 
 ### Battery Dynamics
 
-SOC(t) = SOC(t-1) + η<sub>ch</sub> × P<sub>ch</sub>(t) - (P<sub>dis</sub>(t)/η<sub>dis</sub>)
-SOC(0) = 0.1 × E<sub>batt</sub>
-0 ≤ SOC(t) ≤ E<sub>batt</sub>
+- SOC(t) = SOC(t-1) + η<sub>ch</sub> × P<sub>ch</sub>(t) - (P<sub>dis</sub>(t)/η<sub>dis</sub>)
+- SOC(0) = 0.1 × E<sub>batt</sub>
+- 0 ≤ SOC(t) ≤ E<sub>batt</sub>
 
 - *η<sub>ch</sub>, η<sub>dis</sub>* = 0.9 (efficiencies)
 
-#### load-profile-methodology
-
-Sector-Specific Patterns:
-
-Residential: Dual peaks (8 AM & 8 PM) with elevated base load
-
-Commercial: Midday peak (1 PM) with weekend reduction
-
-Agricultural: Dual daytime peaks (8 AM & 2 PM)
-
-Realistic Scaling:
-
-Peak demand ≈5-6.5 MW
-
-Average demand ≈3.5-4 MW
-
-Minimum nighttime demand ≈1.5-2 MW
-
-Demand Allocation:
-
-Residential: 50%
-
-Commercial: 30%
-
-Agricultural: 20%
-
-Real-World Considerations:
-
-Weekend commercial reduction (40% decrease)
-
-Agricultural activity limited to daylight hours
-
-Random variations in demand (±10-20%)
 
 
 ### Technical Constraints
@@ -75,6 +34,40 @@ Random variations in demand (±10-20%)
 P<sub>pv</sub> ≥ max(L(t)) / max(CF<sub>pv</sub>(t))
 
 P<sub>dis</sub>(t) ≤ E<sub>batt</sub> - SOC(t-1)
+
+### load-profile-methodology
+
+- Sector-Specific Patterns:
+
+- Residential: Dual peaks (8 AM & 8 PM) with elevated base load
+
+- Commercial: Midday peak (1 PM) with weekend reduction
+
+- Agricultural: Dual daytime peaks (8 AM & 2 PM)
+
+#### Realistic Scaling:
+
+- Peak demand ≈5-6.5 MW
+
+- Average demand ≈3.5-4 MW
+
+- Minimum nighttime demand ≈1.5-2 MW
+
+#### Demand Allocation:
+
+- Residential: 50%
+
+- Commercial: 30%
+
+- Agricultural: 20%
+
+#### Real-World Considerations:
+
+- Weekend commercial reduction (40% decrease)
+
+- Agricultural activity limited to daylight hours
+
+- Random variations in demand (±10-20%)
 
 
 
