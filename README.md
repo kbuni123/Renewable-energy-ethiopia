@@ -1,8 +1,33 @@
 
+# Renewable Energy Potential Analysis for Ethiopia
+## Project Overview
+This project analyzes renewable energy potential in Ethiopia through two complementary approaches:
 
+1. **National Annual Analysis**: Land availability assessment for wind/PV across Ethiopia
 
+2. **City Diurnal Analysis**: Optimization model for PV+battery systems in Arsi Negele city
 
-## Mathematical Formulation
+## Key Features
+- Land Availability Analysis
+
+  - Exclusion layers: Population density, protected areas, elevation
+
+  - Capacity potential calculation using Atlite
+
+  - Spatial visualization of eligible areas
+
+  - Energy System Optimization
+
+  - Hourly resolution optimization model
+
+  - PV + battery storage system
+
+  - Synthetic load profile generation
+
+  - Performance metrics calculation
+## Key Equations
+### Objective Function (Minimize Total Cost):
+
 Minimize: C<sub>total</sub> = C<sub>pv</sub> × P<sub>pv</sub> + C<sub>batt</sub> × E<sub>batt</sub>
 - *C<sub>pv</sub>*: PV capital cost (€/kW)  
 - *P<sub>pv</sub>*: PV capacity (kW)  
@@ -35,7 +60,7 @@ P<sub>pv</sub> ≥ max(L(t)) / max(CF<sub>pv</sub>(t))
 
 P<sub>dis</sub>(t) ≤ E<sub>batt</sub> - SOC(t-1)
 
-### load-profile-methodology
+## load-profile-generation
 
 - Sector-Specific Patterns:
 
@@ -45,7 +70,7 @@ P<sub>dis</sub>(t) ≤ E<sub>batt</sub> - SOC(t-1)
 
 - Agricultural: Dual daytime peaks (8 AM & 2 PM)
 
-#### Realistic Scaling:
+### Realistic Scaling:
 
 - Peak demand ≈5-6.5 MW
 
@@ -53,7 +78,7 @@ P<sub>dis</sub>(t) ≤ E<sub>batt</sub> - SOC(t-1)
 
 - Minimum nighttime demand ≈1.5-2 MW
 
-#### Demand Allocation:
+### Demand Allocation:
 
 - Residential: 50%
 
@@ -61,7 +86,7 @@ P<sub>dis</sub>(t) ≤ E<sub>batt</sub> - SOC(t-1)
 
 - Agricultural: 20%
 
-#### Real-World Considerations:
+### Real-World Considerations:
 
 - Weekend commercial reduction (40% decrease)
 
