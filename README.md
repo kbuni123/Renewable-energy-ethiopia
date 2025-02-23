@@ -35,15 +35,39 @@ SOC(0) = 0.1 × E<sub>batt</sub>
 
 - *η<sub>ch</sub>, η<sub>dis</sub>* = 0.9 (efficiencies)
 
-### Load Profile Components
+#### load-profile-methodology
 
-- Base Load = 1.2 + 0.8 × sin(2π×(h(t)-6)/24)
-- Residential = 0.6 × [exp(-0.5×(h(t)-7)² + 0.8×exp(-0.3×(h(t)-19)²)]
-- Commercial = 0.5 + 0.4 × exp(-0.2×(h(t)-13)²)
-- Agricultural = 0.3 × (1 - exp(-0.5×h(t))) × [h(t) < 18]
+Sector-Specific Patterns:
 
-Total Load(t) = 8 × [0.6(Base + Residential) + 0.3Commercial + 0.1Agricultural]
-× (1 + 0.05ε) + 0.3ε
+Residential: Dual peaks (8 AM & 8 PM) with elevated base load
+
+Commercial: Midday peak (1 PM) with weekend reduction
+
+Agricultural: Dual daytime peaks (8 AM & 2 PM)
+
+Realistic Scaling:
+
+Peak demand ≈5-6.5 MW
+
+Average demand ≈3.5-4 MW
+
+Minimum nighttime demand ≈1.5-2 MW
+
+Demand Allocation:
+
+Residential: 50%
+
+Commercial: 30%
+
+Agricultural: 20%
+
+Real-World Considerations:
+
+Weekend commercial reduction (40% decrease)
+
+Agricultural activity limited to daylight hours
+
+Random variations in demand (±10-20%)
 
 
 ### Technical Constraints
